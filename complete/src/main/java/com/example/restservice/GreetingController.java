@@ -14,13 +14,15 @@ public class GreetingController {
 
 	@GetMapping("/greeting")
 	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		System.out.print("---");
-		System.out.print(name);
-		System.out.print("=====");
-//		if (name == "dreamer")
+		System.out.print("Welcon U to there.");
+
 		if (name.equals("dreamer"))
 		{
 			return new Greeting(counter.incrementAndGet(), String.format(template, "you're dreamer"));
+		}
+		else{
+			System.out.print("You input name is:");
+			System.out.print(name);
 		}
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
